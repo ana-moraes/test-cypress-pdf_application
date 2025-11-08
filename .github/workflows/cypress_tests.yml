@@ -40,7 +40,7 @@ jobs:
        - name: Run Cypress tests
          run: |
            echo "Running Cypress tests in Docker container"
-           npx cypress run --env url=http://localhost:5000/pdf,file_name=${{ inputs.file_name }},email=${{ inputs.email }} --reporter mochawesome
+           npx cypress run --env url=http://localhost:5000/pdf,file_name=${{ inputs.file_name }},email=${{ inputs.email }},yopmail=https://yopmail.com/ --reporter mochawesome
            
        - name: Upload artifact
          uses: actions/upload-artifact@v4
