@@ -30,3 +30,15 @@ jobs:
          run: |
            echo "Running Cypress tests in Docker container"
            npm run cy:run
+           
+       - name: Upload artifact
+         uses: actions/upload-artifact@v4
+         if: always()
+         with:
+           name: report
+           path: mochawesome-report
+           retention-days: 30
+
+       - name: Stop and clean up
+         run: |
+           docker compose down --rmi all || true
