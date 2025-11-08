@@ -7,7 +7,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "cy:run": "npx cypress run --env url=http://localhost:5000/pdf,file_name=ana_test,email=pdf_testmail@yopmail.com --reporter mochawesome",
+    "cy:run": "npx cypress run --env url=http://localhost:5000/pdf,file_name=ana_test,email=pdf_testmail@yopmail.com,yopmail=https://yopmail.com/ --reporter mochawesome",
     "cy:open": "npx cypress open --env url=http://localhost:5000/pdf,file_name=ana_test,email=pdf_testmail@yopmail.com --reporter mochawesome"
   },
   "dependencies": {
