@@ -1,0 +1,20 @@
+services:
+  pdf-api:
+    image: adelinop/pdf-service:latest
+    platform: linux/amd64
+    container_name: pdf-application
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    networks:
+      - pdf-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/pdf"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  pdf-network:
+    driver: bridge
