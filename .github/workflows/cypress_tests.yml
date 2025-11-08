@@ -1,0 +1,14 @@
+name: Cypress tests
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test_cypress:
+     runs-on: ubuntu-latest
+
+     steps:
+       - name: Checkout
+         uses: actions/checkout@v4
+         with:
+           lfs: true
